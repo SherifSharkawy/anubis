@@ -87,7 +87,8 @@ public class SendMail extends Activity implements OnClickListener {
 			
 			final String user = address.getText().toString();
 		    final String pass = password.getText().toString();
-		    GMailSender sender = new GMailSender(user, pass);					
+		    GMailSender sender = new GMailSender(user, pass);
+		    
 			try {
 				sender.sendMail(
 					subject.getText().toString(), 

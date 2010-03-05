@@ -1,75 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout
-android:id="@+id/widget166"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent"
-xmlns:android="http://schemas.android.com/apk/res/android"
->
-<TextView
-android:id="@+id/tabcompose"
-android:layout_width="158px"
-android:layout_height="wrap_content"
-android:background="#ffcccccc"
-android:text="Compose"
-android:textSize="16sp"
-android:textStyle="bold"
-android:textColor="#ff4f4e4e"
-android:gravity="center"
-android:layout_x="1px"
-android:layout_y="0px"
->
-</TextView>
-<TextView
-android:id="@+id/tabinbox"
-android:layout_width="161px"
-android:layout_height="wrap_content"
-android:background="#ff535252"
-android:text="Inbox"
-android:textSize="16sp"
-android:gravity="center"
-android:layout_x="159px"
-android:layout_y="0px"
->
-</TextView>
-<EditText
-android:id="@+id/fieldto"
-android:layout_width="300px"
-android:layout_height="wrap_content"
-android:hint="To"
-android:textSize="18sp"
-android:textColor="#ff010101"
-android:layout_x="12px"
-android:layout_y="61px"
->
-</EditText>
-<EditText
-android:id="@+id/fieldsubject"
-android:layout_width="300px"
-android:layout_height="wrap_content"
-android:hint="Subject"
-android:textSize="18sp"
-android:layout_x="12px"
-android:layout_y="141px"
->
-</EditText>
-<EditText
-android:id="@+id/fieldbody"
-android:layout_width="300px"
-android:layout_height="159px"
-android:hint="Message Body"
-android:lines="20"
-android:textSize="18sp"
-android:layout_x="13px"
-android:layout_y="223px"
->
-</EditText>
-<Button
-android:id="@+id/buttonsend"
-android:layout_width="167px"
-android:layout_height="37px"
-android:text="Send"
-android:layout_x="74px"
-android:layout_y="394px"
->
-</Button>
-</AbsoluteLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		>
+		<TextView
+			android:id="@+id/tabcompose"
+			android:layout_width="158px"
+			android:layout_height="wrap_content"
+			android:background="#ffcccccc"
+			android:text="Compose"
+			android:textSize="16sp"
+			android:textStyle="bold"
+			android:textColor="#ff4f4e4e"
+			android:gravity="center"
+		/>
+		<TextView
+			android:id="@+id/tabinbox"
+			android:layout_width="161px"
+			android:layout_height="wrap_content"
+			android:background="#ff535252"
+			android:text="Inbox"
+			android:textSize="16sp"
+			android:gravity="center"
+		/>
+	</LinearLayout>
+	<EditText
+		android:id="@+id/fieldto"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:hint="To"
+		android:textSize="18sp"
+		android:textColor="#ff010101"
+	/>
+	<EditText
+		android:id="@+id/fieldsubject"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:hint="Subject"
+		android:textSize="18sp"
+	/>
+	<EditText
+		android:id="@+id/fieldbody"
+		android:layout_width="fill_parent"
+		android:layout_height="150px"
+		android:hint="Message Body"
+		android:gravity="top"
+		android:textSize="18sp"
+	/>
+	<Button
+		android:id="@+id/buttonsend"
+		android:layout_width="150px"
+		android:layout_height="wrap_content"
+		android:text="Send"
+		android:layout_gravity="right"
+	/>
+</LinearLayout>
