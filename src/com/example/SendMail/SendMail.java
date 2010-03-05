@@ -29,8 +29,7 @@ public class SendMail extends Activity implements OnClickListener {
 	
 	public static final String PREFS_NAME = "MyAccountsFile";
 	
-	public void onCreate(Bundle icicle)
-	{
+	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.login);
 		login = (Button) this.findViewById(R.id.buttonlogin);
