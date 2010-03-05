@@ -14,24 +14,21 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
+        public static final int android_title=0x7f050005;
         public static final int buttonlogin=0x7f050009;
-        public static final int buttonsend=0x7f050011;
+        public static final int buttonsend=0x7f05000e;
         public static final int chckboxremember=0x7f050008;
         public static final int fieldaddress=0x7f050006;
-        public static final int fieldbody=0x7f050010;
+        public static final int fieldbody=0x7f05000d;
         public static final int fieldpassword=0x7f050007;
-        public static final int fieldsubject=0x7f05000d;
+        public static final int fieldsubject=0x7f05000c;
         public static final int fieldto=0x7f05000b;
-        public static final int logo=0x7f050005;
         public static final int sendmail=0x7f050000;
         public static final int tabcompose=0x7f050001;
         public static final int tabinbox=0x7f050002;
         public static final int widget0=0x7f050004;
         public static final int widget109=0x7f050003;
         public static final int widget166=0x7f05000a;
-        public static final int widget29=0x7f05000c;
-        public static final int widget31=0x7f05000e;
-        public static final int widget41=0x7f05000f;
     }
     public static final class layout {
         public static final int inbox=0x7f030000;

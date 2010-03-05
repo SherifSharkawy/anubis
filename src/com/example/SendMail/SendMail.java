@@ -1,7 +1,5 @@
 package com.example.SendMail;
 
-//package org.apache.android.mail;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,23 +13,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SendMail extends Activity implements OnClickListener {
-	Button login;
+	
+	//login
 	EditText address;
 	EditText password;
-	CheckBox rememberme; 
+	CheckBox rememberme;
+	Button login;
 	
-	Button send;
+	//tabs
+	TextView inbox;
+	TextView compose;
+	
+	//compose
 	EditText to;
 	EditText subject;
 	EditText body;
-	TextView inbox;
-	TextView compose;
+	Button send;
 	
 	public static final String PREFS_NAME = "MyAccountsFile";
 	
 	public void onCreate(Bundle icicle) {
+		
 		super.onCreate(icicle);
-		setContentView(R.layout.login);
+		setContentView(R.layout.login);		//login.xml
+		
 		login = (Button) this.findViewById(R.id.buttonlogin);
 		address = (EditText) this.findViewById(R.id.fieldaddress);
 		password = (EditText) this.findViewById(R.id.fieldpassword);
@@ -39,14 +44,12 @@ public class SendMail extends Activity implements OnClickListener {
 		    
 		// Restore preferences
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-		//boolean silent = settings.getBoolean("silentMode", false);
-	    //setSilent(silent);
 		String prev_username = settings.getString("username", null);
 		String prev_password = settings.getString("password", null);
 		
 		address.setText(prev_username);
 		password.setText(prev_password);
-		Toast.makeText(getApplicationContext(), prev_username+", "+prev_password, Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), prev_username+", "+prev_password, Toast.LENGTH_LONG).show();
 		
 		login.setOnClickListener(this);   
 	}
@@ -60,22 +63,15 @@ public class SendMail extends Activity implements OnClickListener {
 				final String user = address.getText().toString();
 			    final String pass = password.getText().toString();
 			    
-			    model save_account = new model(user, pass);
-			    String hashCode = save_account.store();
-			    
-				// Save user preferences. We need an Editor object to
-				// make changes. All objects are from android.context.Context
+				// Save username and password as preferences 
 				SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString("username", user);
 				editor.putString("password", pass);
-				//editor.putBoolean("silentMode", mSilentMode);
-				
-				// Don't forget to commit your edits!!!
 				editor.commit();
 			    
 			 	//toast notification
-			    Toast.makeText(getApplicationContext(), user+" "+pass+""+hashCode, Toast.LENGTH_LONG).show();
+			    //Toast.makeText(getApplicationContext(), user+" "+pass+"", Toast.LENGTH_LONG).show();
 			}
 			
 			setContentView(R.layout.main);
@@ -88,6 +84,7 @@ public class SendMail extends Activity implements OnClickListener {
 			send.setOnClickListener(this);
 		}
 		else if (v.equals(send)) {
+			
 			final String user = address.getText().toString();
 		    final String pass = password.getText().toString();
 		    GMailSender sender = new GMailSender(user, pass);					
@@ -98,9 +95,11 @@ public class SendMail extends Activity implements OnClickListener {
 					user,
 					to.getText().toString()
 				);
+				Toast.makeText(getApplicationContext(), "Email Sent Successfully", Toast.LENGTH_LONG).show();
 			}
 			catch (Exception e) {
-					Log.e("SendMail", e.getMessage(), e);
+				Log.e("SendMail", e.getMessage(), e);
+				Toast.makeText(getApplicationContext(), "Problem Occured", Toast.LENGTH_LONG).show();
 			}
 		}
 		else if (v.equals(inbox)) {
