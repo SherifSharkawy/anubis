@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Click the button below to send email.</string>
+    <string name="app_name">SendMail</string>
+    <string name="sendemail">Send the email</string>
+    
+</resources>
